@@ -1,27 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="timeline.js" type="text/javascript"></script>
-    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato" rel="stylesheet">
+    <link href="index.css" type="text/css" rel="stylesheet">
+    <link href="general.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous">
+    </script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="root/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="root/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="root/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="root/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="root/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="root/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="root/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="root/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="root/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="root/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="root/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="root/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="root/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="root/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <title>Oscar Lingard</title>
   </head>
-  <body>
-    <section class="timeline">
-      <ul>
-        <li>
-          <div>
-            <time>2008</time>
-            Started highschool
-          </div>
-        </li>
 
-        <li>
-          <div>
-            <time>2014</time>
-            Started 6th form
+
+  <body>
+    <nav class = "navBar">
+      <div class="ui vertical menu">
+        <a href="#about_me" class="item active" onClick="switchClass(this)">
+          About me
+        </a>
+        <a href="#experience" class="item" onClick="switchClass(this)">
+          Experiences
+        </a>
+        <a href="#education" class="item" onClick="switchClass(this)">
+          Education
+        </a>
+        <a href="#Achievements" class="item" onClick="switchClass(this)">
+          Achievements
+        </a>
+        <a href="#contact_me" class="item" onClick="switch(this)">
+          Contact me
+        </a>
+      </div>
+    </nav>
+
+
+
+    <div class="start">
+      <img src = "root/maths-background.jpg" alt="Pictures of mathmatical symbols" />
+      <div class = "titles">
+        <h1>Oscar Lingard</h1>
+        <h3>An Online Curriculum Vitae</h3>
+      </div>
+    </div>
+
+    <div id="about_me">
+      <div class="header1">
+        <h1>About Me</h1>
+      </div>
+
+      <div class="about_me_text">
+        <h4>Bio</h4>
+        <p>
+          Hi! My aim is to secure a financial internship so I can work with highly skilled professionals and continue my learning as well as providing support to the company in the financial department. <br><br>
+          I'm a student originally from Lancashire with strong aspirations for a future in finance. Not only have I gained experience in computer programming languages and understand how stock markets work, I have an inner self-confidence which allows me to communicate with anyone and to any audience.
+        </p>
+
+
+        <div class="ui centered card">
+          <div class="image">
+            <img src="root/Prof-Pic.jpg">
           </div>
-        </li>
-      </ul>
-    </section>
+          <div class="content">
+            <div class="header">Oscar Lingard</div>
+            <div class="meta">
+              <span class="date">Age: 19</span>
+            </div>
+            <div class="description">
+              Oscar is a maths undergraduate at the University of Durham
+            </div>
+          </div>
+          <div class="extra content">
+            Predicted First Class Honours
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="experience">
+      <div class="header1">
+        <h1>Experiences</h1>
+      </div>
+
+      <section class = "timeline">
+        <ul>
+          <li>
+            <div>
+              <time>June 2017 - September 2017</time> <br>
+              <h3>Internship at Fitch Malta </h3> <br>
+              In this internship, I learnt valuables skills ranging from numerous programming langauges to thought-provoking business ideas. I had to apply both quick learning and communication to succeed in this business workplace.
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <time>September 2014 - August 2016</time> <br>
+              <h3>Private Tutor</h3> <br>
+              •	I used my strong interpersonal skills to clearly and effectively communicate with my tutees. <br>
+              •	Constructed clear and precise lesson plans with objectives to work towards. <br>
+              •	With my support, I helped my tutees achieve better results such as improving a boy’s GCSE results by several grades.
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <time>September 2012 - Present</time> <br>
+              <h3>Administrator - Cartford Inn</h3> <br>
+              •	Cooperating with the owner in matters such as administration where I create complex spreadsheets to control the tip system and holiday pay. <br>
+              •	Using my organisational skills to create a more efficient system for documenting the takings of the restaurant.
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <time>November 2011 - Present</time> <br>
+              <h3>Head Waiter and Barista - Cartford Inn</h3> <br>
+              • Because of my quick-thinking and ability to work under pressure, I was promoted to head barista and waiter which involves training other staff members and using my own judgement to assign responsibilities. <br>
+              •	Working in a high-end gastro-pub necessitates that we provide the highest level of food and customer service.
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
+  </div>
+
+    <div id="education">
+      <div class="header1">
+        <h1>Education</h1>
+      </div>
+
+      <section class = "timeline">
+        <ul>
+          <li>
+            <div>
+              <time>October 2016 - Present</time> <br>
+              <h3>University of Durham</h3> <br>
+              Attained 84% in the first year of my Mathematics Degree
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <time>September 2013- August 2015</time> <br>
+              <h3>Lancaster Royal Grammar School</h3> <br>
+              Achieved 2 A*&#39s in Maths and Further Maths and 2 A&#39s in Economics and Physics at A-Level
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <time>September 2008 - August 2013</time> <br>
+              <h3>Lancaster Royal Grammar School</h3> <br>
+              Achieved 10 GCSE's A*-A including Maths, Additonal Maths, English and the three sciences.
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div id = "Achievements">
+      <div class="header1">
+        <h1>Achievements</h1>
+      </div>
+
+      <div class="cont">
+        <h2>National Chess Finalist</h2>
+        <img src="root/chess.jpg">
+        <h4>Uk Chess Challenge 2013</h4> <br>
+        <p>This showcases my exceptional critical thinking and my ability to see the consequences which arise from my decisions.</p>
+      </div>
+
+      <div class="cont">
+        <h2>Vice President of The Northern Lights</h2>
+        <img src="root/mic.jpg">
+        <h4>Award winning A Capella group</h4> <br>
+        <p>I had to overcame the numerous auditions to gain a place in the Durham University a cappella group which won the North Regional A Cappella Championships 2017. After my first year I was elected by my peers to become vice-president for 2017/18.</p>
+      </div>
+
+      <div class="cont">
+        <h2>Youth Representative</h2>
+        <img src="root/masks.png">
+        <h4>St Oswalds Dramatists 2013-2015</h4> <br>
+        <p> My role was to help any younger members express their concerns and worries to the director. Not only was this a large responsibility I handled from a young age, I utilised my extrovert personality to make it easy for the children to communicate with me.</p>
+      </div>
+
+      <div class="cont">
+        <h2>Charity Work</h2>
+        <img src="root/brain.jpg">
+        <h4>The Brain Tumour Charity - Mark Lingard Fund</h4> <br>
+        <p>Organised numerous events for the charity such as an open day at Moy Farm Veterinary Centre which raised over £7,000.</p>
+      </div>
+    </div>
+
+    <div id="contact_me">
+      <div class="header1" style="color:White; padding-top:7.5rem">
+        <h1>Contact Me</h1>
+      </div>
+
+      <div class="ct">
+        <div class="ui labeled big button" >
+          <div class="ui icon button" data-tooltip="linkedin.com/in/oscarlingard" data-position="top left" onClick="ass1()" >
+            <i class="linkedin icon"></i>
+          </div>
+          <div class="ui basic label">
+            LinkedIn
+          </div>
+        </div>
+
+        <div class="ui labeled big button" id="lab2" >
+          <div class="ui icon button" data-tooltip="oscarlingard@gmail.com" data-position="top left" onClick="ass2()" >
+            <i class="mail icon"></i>
+          </div>
+          <div class="ui basic label">
+            E-mail
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="general.js" type="text/javascript"></script>
   </body>
 </html>
