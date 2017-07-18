@@ -434,11 +434,15 @@
     align-items: center;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    margin: 0px
+    margin: 0px;
   }
 
 
   #lab2 {
     left: 0%;
   }
+}
+
+* {
+  border: 1px Solid Black;
 }
