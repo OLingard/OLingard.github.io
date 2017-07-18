@@ -64,9 +64,9 @@
   display: none;
 }
 
-.navBar2 div a {
+.navBar2 div div a {
   font-family: "Josefin Sans";
-  font-size: 12px;
+  font-size: 11px;
 }
 
 
@@ -77,8 +77,6 @@
 
   .navBar2 {
     display: flex;
-    float: right;
-    justify-content: space-between;
   }
 }
 
