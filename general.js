@@ -5,6 +5,13 @@ function switchClass(x) {
         x.className = "item active";
         return true;
     }
+function switchClass2(x) {
+        if(document.getElementsByClassName("item active").length){
+            document.getElementsByClassName("item active")[1].className = "item";
+        }
+        x.className = "item active";
+        return true;
+    }
 
 function ass1() {
   $(location).attr('href', 'http://linkedin.com/in/oscarlingard');
