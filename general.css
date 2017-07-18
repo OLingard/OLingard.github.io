@@ -1,7 +1,7 @@
 /*intro */
 
 .start {
-  margin-top: 0px;
+  margin: 0px;
   width: auto;
   height: 100%;
   background:#0093AF;
@@ -30,7 +30,6 @@
   color: 	#FFF;
   padding-bottom: 2rem;
   border-bottom: 2px solid white;
-  border-bottom-width: 50%
 }
 
 .start .titles h3 {
