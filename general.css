@@ -107,8 +107,8 @@
 
   .about_me_text p {
     position: relative;
-    width: 50%;
-    left: 25%;
+    width: 70%;
+    left: 15%;
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
@@ -357,9 +357,11 @@
 
 @media screen and (max-width: 500px) {
   .cont h4 {
-    width: 40%;
+    width: 42.5%;
   }
-
+  .cont p {
+    width: 75%;
+  }
 }
 
 
