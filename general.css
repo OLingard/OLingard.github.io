@@ -37,6 +37,7 @@
 
 .start .titles h3 {
   font-family: Lato;
+  font-style: italic;
   font-size: 2rem;
   font-weight: 300;
   color: #FFF;
@@ -336,6 +337,10 @@
   font-weight: 700;
   width: 87.5%;
   padding-bottom: 1.5rem;
+}
+
+.cont p a {
+  color: white
 }
 
 .cont:nth-child(even) {
