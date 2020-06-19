@@ -45,18 +45,18 @@
 
 /* Navbar */
 
-.navBar {
+.navBarVertical {
   position: fixed;
   z-index: 1;
   top: 6%;
   border-radius: 10px;
 }
 
-.navBar div {
+.navBarVertical div {
   position: relative;
 }
 
-.navBar div a {
+.navBarVertical div a {
   position: relative;
   font-family: "Josefin Sans";
   padding-bottom: 5rem;
@@ -64,23 +64,23 @@
   font-weight: 600;
 }
 
-.navBar2 {
+.navBarFixedRight {
   display: none;
   width: 100%;
 }
 
-.navBar2 div div a {
+.navBarFixedRight div div a {
   font-family: "Josefin Sans";
   font-size: 8px;
 }
 
 
 @media screen and (max-width: 900px) {
-  .navBar {
+  .navBarVertical {
     display: none;
   }
 
-  .navBar2 {
+  .navBarFixedRight {
     display: flex;
   }
 }
@@ -291,7 +291,7 @@
 
 /* Achievements */
 
-.cont {
+.achievementContainer {
   position: relative;
   text-align: center;
   width: 30%;
@@ -302,7 +302,7 @@
   z-index: 2;
 }
 
-.cont img {
+.achievementContainer img {
   position: relative;
   border-radius:50%;
   width: 8.5rem;
@@ -310,7 +310,7 @@
   top: 0rem;
 }
 
-.cont h2 {
+.achievementContainer h2 {
   position: relative;
   width:90%;
   left: 1rem;
@@ -320,7 +320,7 @@
   padding-top: 1.5rem;
 }
 
-.cont h4 {
+.achievementContainer h4 {
   position: relative;
   left: 1rem;
   font-family: "Josefin Sans";
@@ -329,7 +329,7 @@
   width: 87.5%;
 }
 
-.cont p {
+.achievementContainer p {
   position: relative;
   left: 1rem;
   font-family: "Josefin Sans";
@@ -339,53 +339,53 @@
   padding-bottom: 1.5rem;
 }
 
-.cont p a {
+.achievementContainer p a {
   color: white
 }
 
-.cont:nth-child(even) {
+.achievementContainer:nth-child(even) {
   left:17.5%;
   position: absolute;
 }
 
-.cont:nth-child(odd) {
+.achievementContainer:nth-child(odd) {
   left:57.5%;
 }
 
 
 @media screen and (max-width: 900px) {
-  .cont:nth-child(even) {
+  .achievementContainer:nth-child(even) {
     position: relative;
     left:12.5%;
   }
 
-  .cont:nth-child(odd) {
+  .achievementContainer:nth-child(odd) {
     left:12.5%;
   }
-  .cont {
+  .achievementContainer {
     width:75%;
     text-align: left;
   }
-  .cont img {
+  .achievementContainer img {
     float:right;
     right: 7.5%;
   }
-  .cont h2 {
+  .achievementContainer h2 {
     text-align: center;
   }
-  .cont p {
+  .achievementContainer p {
     width: 60%;
   }
-  .cont h4 {
+  .achievementContainer h4 {
     width: 60%;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .cont h4 {
+  .achievementContainer h4 {
     width: 42.5%;
   }
-  .cont p {
+  .achievementContainer p {
     width: 75%;
   }
 }
@@ -452,7 +452,7 @@
   }
 
 
-  #lab2 {
+  #emailButton {
     left: 0%;
   }
 }
