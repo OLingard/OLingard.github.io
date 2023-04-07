@@ -1,0 +1,56 @@
+---
+import Icon from './Icon.astro'
+interface Props {
+  percent: number
+  color?: string
+  title: string
+  subTitle: string
+  tooltip?: string
+}
+
+const {
+  percent,
+  color,
+  title,
+  subTitle,
+  tooltip
+} = Astro.props
+---
+<div class="loader">
+  <span class="loader-title">{title}</span>
+  <span class="loader-subtitle" title={tooltip}><Icon icon="info"/> {subTitle}</span>
+  <div class="loader-outer">
+    <div class="loader-inner" style={`width: ${percent}%; background-color: ${color || 'lightgreen'}`} />
+  </div>
+</div>
+
+<style>
+  .loader {
+    display: grid;
+    grid-template-areas: 
+      "title title . subtitle"
+      "loader loader loader loader";
+    gap: 1rem;
+    margin: 0.5rem;
+  }
+
+  .loader-title {
+    grid-area: title;
+  }
+
+  .loader-subtitle {
+    grid-area: subtitle;
+    justify-self: end;
+  }
+
+  .loader-outer {
+    background-color: var(--gray-800);
+    grid-area: loader;
+    height: 20px;
+  }
+
+  .loader-inner {
+    grid-area: loader;
+    height: 100%;
+  }
+</style>
