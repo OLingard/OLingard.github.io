@@ -1,5 +1,6 @@
 ---
 import '../styles/global.scss';
+import { Tooltips } from 'astro-tooltips';
 
 
 interface Props {
@@ -26,6 +27,7 @@ const {
 	href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato"
 	rel="stylesheet"
 />
+<Tooltips interactive={false} delay={[15, 200]} maxWidth="250px"/>
 
 <script is:inline>
 	// This code is inlined in the head to make dark mode instant & blocking.

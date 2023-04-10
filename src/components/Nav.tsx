@@ -6,7 +6,7 @@ const switchClass = () => {
 }
 
 interface NavItem {
-  href: string
+  id: string
   title: string
 }
 
@@ -20,7 +20,7 @@ export const Nav: React.FC<Props> = ({ nav }) => {
       {
         nav.map((navItem, idx) => (
           <a
-            href={navItem.href}
+            href={'#' + navItem.id}
             key={idx}
             className={idx === 0 ? "item active" : "item"}
           >

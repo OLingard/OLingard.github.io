@@ -18,29 +18,38 @@ const {
 ---
 <div class="loader">
   <span class="loader-title">{title}</span>
-  <span class="loader-subtitle" title={tooltip}><Icon icon="info"/> {subTitle}</span>
+  <button class="loader-subtitle" title={tooltip}><Icon icon="info"/> {subTitle}</button>
   <div class="loader-outer">
-    <div class="loader-inner" style={`width: ${percent}%; background-color: ${color || 'lightgreen'}`} />
+    <div class="loader-inner" style={`width: ${percent}%; ${color ? `background-color: ${color};` : ''}`} />
   </div>
 </div>
 
-<style>
+<style lang="scss">
+  @import '../styles/global.scss';
   .loader {
     display: grid;
     grid-template-areas: 
       "title title . subtitle"
       "loader loader loader loader";
     gap: 1rem;
-    margin: 0.5rem;
+    margin: 0.5rem 0;
   }
 
   .loader-title {
     grid-area: title;
+    justify-self: start;
   }
 
   .loader-subtitle {
     grid-area: subtitle;
     justify-self: end;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
   }
 
   .loader-outer {
@@ -52,5 +61,6 @@ const {
   .loader-inner {
     grid-area: loader;
     height: 100%;
+    background-color: $accent-regular;
   }
 </style>

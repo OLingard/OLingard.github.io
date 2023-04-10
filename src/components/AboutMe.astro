@@ -1,0 +1,124 @@
+---
+import Loader from "./Loader.astro";
+
+const loaders = [
+	{
+		percent: 79,
+		title: 'Typescript',
+		subTitle: 'Pro',
+		description: 'Actively coding both front end and back end projects in typescript.'
+	},
+	{
+		percent: 85,
+		title: 'AWS',
+		subTitle: 'Pro',
+		description: 'Extensive usage of a broad range of AWS services. Expertise in lambdas, IaC and Cloudfront.'
+	},
+	{
+		percent: 62,
+		title: 'Java',
+		subTitle: 'Semi-Pro',
+		description: '2+ years of using Java on and off.'
+	},
+	{
+		percent: 49,
+		title: 'Terraform',
+		subTitle: 'Intermediate',
+		description: 'Setup multiple providers in tandem in my latest projects.'
+	},
+	{
+		percent: 68,
+		title: 'Python',
+		subTitle: 'Semi-Pro',
+		description: '2+ years of using Python for both back end projects and data analytics.'
+	},
+	{
+		percent: 72,
+		title: 'CI/CD and Deployment Automation',
+		subTitle: 'Pro',
+		description: 'Completed the migration of multiple project\'s CI/CD from Gitlab to Github. Set up the K8s framework for multiple projects.'
+	},
+	{
+		percent: 52,
+		title: 'FE Frameworks',
+		subTitle: 'Intermediate',
+		description: 'Proficient in Vue and Astro. Comfortable to pick up quickly other frameworks.'
+	}
+]
+---
+<div class="wrapper">
+  <div class="who-am-i">
+    <h3>Who am I?</h3>
+    <p>
+      My name is Oscar Lingard and I'm a professional software engineer living and working in Manchester, UK. With a passion for coding and an experience store which continues to grow, I help create cutting-edge software solutions that allow businesses achieve their goals. I specialize in TypeScript and DevOps, with a particular focus on AWS and performant site creation.
+    </p>
+
+    <h3>Education</h3>
+    <ul>
+      <li>
+        THG Accelerator
+      </li>
+      <li>
+        Durham University - BSc Mathematics: 1st Class Honours
+      </li>
+    </ul>
+  </div>
+  <div class="skills">
+    <h3>Skills</h3>
+    <p>Click on the information icon to learn more about each skills</p>
+    {
+      loaders.map(loader => {
+        return <Loader percent={loader.percent} tooltip={loader.description} title={loader.title} subTitle={loader.subTitle} />
+      })
+    }
+  </div>
+</div>
+
+<style lang="scss">
+  @import '../styles/global.scss';
+
+  .wrapper {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    height: max-content;
+    gap: 1rem;
+    flex-direction: column;
+    width: 75%;
+
+    h3 {
+      font-size: 2rem;
+      color: $accent-regular;
+    }
+  }
+
+  .who-am-i {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    .wrapper {
+      flex-direction: row;
+      width: 68%;
+      text-align: left;
+    }
+
+    .who-am-i {
+      align-self: stretch;
+      width: 60%;
+    }
+
+    .skills {
+      width: 40%;
+    }
+  }
+</style>

@@ -1,4 +1,6 @@
 ---
+import AboutMe from '../components/AboutMe.astro';
+import Section from '../components/Section.astro';
 import TitleCard from '../components/TitleCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
@@ -6,4 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout>
 	<TitleCard />
+  <Section title="About Me" id="about-me">
+    <AboutMe />
+  </Section>
 </BaseLayout>

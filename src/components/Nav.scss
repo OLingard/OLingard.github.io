@@ -12,7 +12,6 @@
   position: fixed;
   width: 100%;
   background-color: $gray-0;
-  color: $gray-999;
   gap: 1rem;
   border-radius: 0px;
   height: $nav-height;
@@ -20,6 +19,7 @@
 
   a {
     text-decoration: none;
+    color: $gray-999;
     cursor: pointer;
     font-weight: 500;
   }
@@ -39,7 +39,6 @@
     flex-direction: column;
     justify-content: flex-start;
     background-color: $gray-999;
-    color: $gray-0;
     font-size: $text-lg;
     align-items: flex-start;
     border-radius: 3%;
@@ -56,6 +55,7 @@
       width: calc($width - $padding-right);
       box-shadow: 0 1px 1px 0 $gray-800;
       @include smooth-transition;
+      color: $gray-0;
     }
 
     :hover {

@@ -1,15 +1,45 @@
 ---
+import { Image } from "@astrojs/image/components";
 ---
 
-<div class="wrapper">
-</div>
+<section class="wrapper">
+  <Image
+    width={300}
+    height={300}
+    src="/assets/headshot.jpg"
+    alt="Oscar Lingard's Headshot'"
+    format="jpg"
+  />
+  <h1>Oscar Lingard</h1>
+  <h2>Software Engineer</h2>
+</section>
 
 <style lang="scss">
   @import '../styles/global.scss';
   .wrapper {
-    background: url("/assets/backgrounds/bg-main-light-1440w.jpg");
+    background: $gradient-subtle;
     width: 100%;
     height: calc(100vh - $nav-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    img {
+      border-radius: 100%;
+    }
+
+    h1 {
+      font-size: 5rem;
+      width: 100%;
+      margin: 3rem 0 1.5rem 0;
+      border-bottom: 1px solid $gray-0;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
   }
 
   @media screen and (min-width: $breakpoint-large) {

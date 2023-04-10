@@ -19,10 +19,6 @@ const nav = [
 		id: 'about-me'
 	},
 	{
-		title: 'Skills',
-		id: 'skills'
-	},
-	{
 		title: 'Experience',
 		id: 'experience'
 	},
@@ -42,7 +38,7 @@ const nav = [
 		<MainHead title={title} description={description} />
 	</head>
 	<body>
-		<div class="stack">
+		<div>
 			<Nav nav={nav}/>
 			<main>
 				<slot />
