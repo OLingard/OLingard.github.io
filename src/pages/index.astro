@@ -1,5 +1,6 @@
 ---
 import AboutMe from '../components/AboutMe.astro';
+import Experience from '../components/Experience.astro';
 import Section from '../components/Section.astro';
 import TitleCard from '../components/TitleCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -10,5 +11,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	<TitleCard />
   <Section title="About Me" id="about-me">
     <AboutMe />
+  </Section>
+  <Section title="Experience" id="experience">
+    <Experience />
+  </Section>
+  <Section title="Project and Contributions" id="projects-and-contributions">
+    <Experience />
+  </Section>
+  <Section title="Contact Me" id="contact-me" backgroundColor="black">
+    <Experience />
   </Section>
 </BaseLayout>

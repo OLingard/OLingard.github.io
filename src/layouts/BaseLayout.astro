@@ -38,12 +38,9 @@ const nav = [
 		<MainHead title={title} description={description} />
 	</head>
 	<body>
-		<div>
-			<Nav nav={nav}/>
-			<main>
-				<slot />
-			</main>
-			
-		</div>
+		<Nav nav={nav}/>
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>

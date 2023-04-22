@@ -1,13 +1,14 @@
 ---
 interface Props {
   title: string,
-  id?: string
+  id?: string,
+  backgroundColor?: string
 }
 
-const { title, id } = Astro.props
+const { title, id, backgroundColor } = Astro.props
 ---
 
-<section id={id}>
+<section id={id} style={backgroundColor && `background-color: ${backgroundColor};`}>
   <h2>
     {title}
   </h2>

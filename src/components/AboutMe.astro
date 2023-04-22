@@ -1,4 +1,5 @@
 ---
+import Card from "./Card.astro";
 import Loader from "./Loader.astro";
 
 const loaders = [
@@ -54,13 +55,13 @@ const loaders = [
     </p>
 
     <h3>Education</h3>
-    <ul>
-      <li>
-        THG Accelerator
-      </li>
-      <li>
-        Durham University - BSc Mathematics: 1st Class Honours
-      </li>
+    <ul class="education-list">
+      <Card imageSrc="/assets/thg-logo.png" title="THG Accelerator"/>
+      <Card
+        imageSrc="/assets/durham-uni.png"
+        title="Durham University"
+        description="BSc Mathematics: 1st Class Honours"
+      />
     </ul>
   </div>
   <div class="skills">
@@ -103,6 +104,16 @@ const loaders = [
     display: flex;
     flex-direction: column;
     width: 100%;
+  }
+
+  .education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    justify-content: center;
   }
 
   @media (min-width: $breakpoint-large) {
