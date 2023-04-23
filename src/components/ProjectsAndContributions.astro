@@ -1,2 +1,29 @@
+---
+import Accordian from "./Accordian.astro";
 
-
+const accordian = [
+  {
+    title: 'Test',
+    body: 'Hello World'
+  },
+  {
+    title: 'Test',
+    body: 'Hello World'
+  }
+]
+---
+<div>
+{
+  accordian.map(item => {
+    return <Accordian title={item.title} body={item.body} />
+  })
+}
+</div>
+<style lang="scss">
+div {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+</style>

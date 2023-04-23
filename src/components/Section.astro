@@ -3,19 +3,22 @@ interface Props {
   title: string,
   id?: string,
   backgroundColor?: string
+  color?: string
 }
 
-const { title, id, backgroundColor } = Astro.props
+const { title, id, backgroundColor, color } = Astro.props
 ---
 
-<section id={id} style={backgroundColor && `background-color: ${backgroundColor};`}>
-  <h2>
+<section id={id} style={backgroundColor && `background-color: var(${backgroundColor})`}>
+  <h2 style={ color && `color: var(${color}); border-color: var(${color})`}>
     {title}
   </h2>
   <slot/>
 </section>
 
 <style lang="scss">
+  @import '../styles/global.scss';
+
   section {
     width: 100%;
     position: relative;
@@ -25,14 +28,21 @@ const { title, id, backgroundColor } = Astro.props
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin: 5rem 0;
+    padding: 3rem 0;
 
 
     h2 {
-      font-size: 4rem;
+      font-size: 3.5rem;
       padding-bottom: 2rem;
       border-bottom: 1px solid black;
       width: 50%;
+      margin: 1rem;
+    }
+
+    @media (max-width: $breakpoint-med) {
+      h2 {
+        width: 100%;
+      }
     }
   }
 </style>

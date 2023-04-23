@@ -27,8 +27,9 @@ const { sections } = Astro.props
 </div>
 
 <style lang="scss">
+  @import '../styles/global.scss';
   .timeline {
-    margin-top: 8.75rem;
+    margin-top: 4rem;
     overflow: hidden;
     width: 100%;
     text-align: left;
@@ -62,7 +63,7 @@ const { sections } = Astro.props
     div {
       position: relative;
       bottom: 0;
-      width: 370px;
+      width: 440px;
       padding: 15px;
       background: #0093AF;
       border-radius: 10px;
@@ -99,7 +100,7 @@ const { sections } = Astro.props
   }
 
   .timeline ul li:nth-child(odd) div {
-    left: 75px;
+    left: 45px;
     transform: translate3d(200px,0,0);
   }
 
@@ -110,7 +111,7 @@ const { sections } = Astro.props
   }
 
   .timeline ul li:nth-child(even) div {
-    left: -469px;
+    left: -505px;
     transform: translate3d(-200px,0,0);
   }
 
@@ -131,18 +132,7 @@ const { sections } = Astro.props
     opacity: 1;
   }
 
-  @media screen and (max-width: 900px) {
-    .timeline ul li div {
-      width: 250px;
-    }
-    .timeline ul li:nth-child(even) div {
-      left: -300px; /*250+45-6*/
-    }.timeline ul li:nth-child(odd) div {
-      left: 45px; /*250+45-6*/
-    }
-  }
-
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: $breakpoint-large) {
     .timeline ul li {
       margin-left: 20px;
     }

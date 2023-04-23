@@ -1,0 +1,51 @@
+---
+import Icon from "./Icon.astro";
+import { iconPaths } from "./IconPaths";
+
+export interface Props {
+  icon: keyof typeof iconPaths
+  tooltip?: string
+  label: string
+  href: string
+}
+
+const {icon, tooltip, label, href } = Astro.props
+
+---
+
+<a href={href}>
+  <Icon icon={icon} size="40px"/>
+  <span>{label}</span>
+</a>
+
+<style lang="scss">
+  @import '../styles/global.scss';
+
+  a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: max-content;
+
+    span {
+      padding: 0.5rem 0.8rem;
+      font-size: $text-lg;
+      background-color: $gray-700;
+      width: max-content;
+      vertical-align: middle;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      height: 40px;
+      border-radius: 0 .5rem .5rem 0;
+    }
+
+    :global(svg) {
+      background-color: $gray-800;
+      padding: 0.5rem 0.4rem;
+      border-radius: .5rem 0 0 .5rem;
+    }
+  }
+
+</style>
