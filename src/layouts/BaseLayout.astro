@@ -38,7 +38,7 @@ const nav = [
 		<MainHead title={title} description={description} />
 	</head>
 	<body>
-		<Nav nav={nav}/>
+		<Nav nav={nav} client:load/>
 		<main>
 			<slot />
 		</main>

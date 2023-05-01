@@ -9,7 +9,7 @@ interface Props {
 const { title, id, backgroundColor, color } = Astro.props
 ---
 
-<section id={id} style={backgroundColor && `background-color: var(${backgroundColor})`}>
+<section id={id} style={backgroundColor && `background-color: var(${backgroundColor})`} class="main-section">
   <h2 style={ color && `color: var(${color}); border-color: var(${color})`}>
     {title}
   </h2>

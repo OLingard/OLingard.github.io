@@ -3,10 +3,9 @@ import Icon from "./Icon.astro"
 
 interface Props {
   title: string
-  body: string
 }
 
-const { title, body } = Astro.props
+const { title } = Astro.props
 
 ---
 
@@ -17,7 +16,9 @@ const { title, body } = Astro.props
     </h3>
     <Icon icon="chevron-down" size="32px" />
   </button>
-  <div class="message-body pb-9 attributes no-show" set:html={body} />
+  <div class="message-body pb-9 attributes show" >
+    <slot />
+  </div>
 </div>
 
 <script>
@@ -98,5 +99,11 @@ toggleButtons.forEach(button => button.addEventListener('click', toggle))
 
   .attributes > p {
     margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: $breakpoint-large) {
+    .message-header {
+      padding: 0 1rem;
+    }
   }
 </style>

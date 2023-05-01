@@ -50,9 +50,8 @@ const loaders = [
 <div class="wrapper">
   <div class="who-am-i">
     <h3>Who am I?</h3>
-    <p>
-      My name is Oscar Lingard and I'm a professional software engineer living and working in Manchester, UK. With a passion for coding and an experience store which continues to grow, I help create cutting-edge software solutions that allow businesses achieve their goals. I specialize in TypeScript and DevOps, with a particular focus on AWS and performant site creation.
-    </p>
+    <p>My name is Oscar Lingard and I'm a professional software engineer living and working in Manchester, UK. With a passion for coding and an experience store which continues to grow, I help create cutting-edge software solutions that allow businesses achieve their goals.</p>
+    <p>I specialize in TypeScript and DevOps, with a particular focus on AWS and performant site creation.</p>
 
     <h3>Education</h3>
     <ul class="education-list">
@@ -66,7 +65,7 @@ const loaders = [
   </div>
   <div class="skills">
     <h3>Skills</h3>
-    <p>Click on the information icon to learn more about each skills</p>
+    <p>Hover over the information icon to learn more about each skills</p>
     {
       loaders.map(loader => {
         return <Loader percent={loader.percent} tooltip={loader.description} title={loader.title} subTitle={loader.subTitle} />
