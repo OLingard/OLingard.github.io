@@ -1,0 +1,109 @@
+---
+import Icon from "./Icon.astro"
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+
+---
+
+<div class="message">
+  <button class="message-header" type="button">
+    <h3 class="text-xl text-left font-medium py-4 pr-8">
+      { title }
+    </h3>
+    <Icon icon="chevron-down" size="32px" />
+  </button>
+  <div class="message-body pb-9 attributes show" >
+    <slot />
+  </div>
+</div>
+
+<script>
+const toggleButtons = document.querySelectorAll('button.message-header')
+const toggle = (event: Event) => {
+  const target = event.currentTarget as Element
+  target.nextElementSibling.classList.toggle('show')
+  target.nextElementSibling.classList.toggle('no-show')
+  target.classList.toggle('message-header--expanded')
+}
+toggleButtons.forEach(button => button.addEventListener('click', toggle))
+</script>
+
+<style lang="scss">
+  @import '../styles/global.scss';
+
+  .show {
+    display: block;
+  }
+
+  .no-show {
+    display: none;
+  }
+
+  .message {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .message-header {
+    cursor: pointer;
+    color: $gray-0;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+
+    > :global(svg) {
+      transition: transform 0.1s linear;
+    }
+
+    &--expanded > :global(svg) {
+      transform: rotateX(180deg);
+    }
+
+    h3 {
+      font-size: $text-xl;;
+    }
+  }
+
+  .message-body {
+    overflow: hidden;
+  }
+
+  .is-closed .message-body {
+    padding: 0;
+    max-height: 0;
+  }
+
+  .message-content {
+    padding: 1rem 0;
+  }
+
+  .attributes > ul {
+    list-style: disc;
+    list-style-position: inside;
+  }
+
+  .attributes > p {
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: $breakpoint-large) {
+    .message-header {
+      padding: 0 1rem;
+    }
+  }
+</style>

@@ -1,0 +1,26 @@
+---
+import AboutMe from '../components/AboutMe.astro';
+import ContactMe from '../components/ContactMe.astro';
+import Experience from '../components/Experience.astro';
+import ProjectsAndContributions from '../components/ProjectsAndContributions.astro';
+import Section from '../components/Section.astro';
+import TitleCard from '../components/TitleCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+---
+
+<BaseLayout>
+	<TitleCard />
+  <Section title="About Me" id="about-me">
+    <AboutMe />
+  </Section>
+  <Section title="Experience" id="experience">
+    <Experience />
+  </Section>
+  <Section title="Projects and Contributions" id="projects-and-contributions">
+    <ProjectsAndContributions />
+  </Section>
+  <Section title="Contact Me" id="contact-me" backgroundColor="--gray-100" color="--gray-999">
+    <ContactMe />
+  </Section>
+</BaseLayout>

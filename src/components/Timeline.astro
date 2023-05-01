@@ -1,0 +1,174 @@
+---
+export interface TimelineBlob {
+  time: string
+  title: string
+  information: string
+}
+
+interface Props {
+  sections: TimelineBlob[]
+}
+
+const { sections } = Astro.props
+---
+
+<div class="timeline">
+  <ul>
+    {sections.map(section => {
+      return <li>
+          <div>
+            <time>{section.time}</time>
+            <h3>{section.title}</h3>
+            <p set:html={section.information} />
+          </div>
+        </li>
+    })}
+  </ul>
+</div>
+
+<style lang="scss">
+  @import '../styles/global.scss';
+  .timeline {
+    margin-top: 4rem;
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+
+    ul {
+      padding: 0
+    }
+
+    ul li {
+      list-style-type: none;
+      position: relative;
+      width: 6px;
+      margin: 0 auto;
+      padding-top: 5rem;
+      background: #000;
+      border-radius: 0.25rem;
+    }
+
+    ul li::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      transition: background .5s ease-in-out;
+    }
+
+    div {
+      position: relative;
+      bottom: 0;
+      width: 440px;
+      padding: 15px;
+      background: $accent-light;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      z-index: 1;
+      visibility: hidden;
+      opacity: 0;
+      transition: all .5s ease-out;
+
+      time {
+        font-size: 1.75rem;
+        font-weight: 700;
+      }
+
+      h3{
+        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+      }
+    }
+
+    div::before {
+      content: '';
+      position: absolute;
+      bottom: 7px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+  }
+
+  .timeline ul li:nth-child(odd) div {
+    left: 45px;
+    transform: translate3d(200px,0,0);
+  }
+
+  .timeline ul li:nth-child(odd) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent $accent-light transparent transparent;
+  }
+
+  .timeline ul li:nth-child(even) div {
+    left: -505px;
+    transform: translate3d(-200px,0,0);
+  }
+
+  .timeline ul li:nth-child(even) div::before {
+    right: -15px;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent $accent-light;
+  }
+
+
+  .timeline ul li.in-view::after {
+    background: $accent-light;
+  }
+
+  .timeline ul li.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @media screen and (max-width: $breakpoint-large) {
+    .timeline ul li {
+      margin-left: 20px;
+    }
+
+    .timeline ul li div {
+      width: calc(100vw - 150px);
+      font-size: $text-base;
+    }
+
+    .timeline ul li:nth-child(even) div {
+      left: 45px;
+    }
+
+    .timeline ul li:nth-child(even) div::before {
+      left: -15px;
+      border-width: 8px 16px 8px 0;
+      border-color: transparent #0093AF transparent transparent;
+    }
+  }
+
+</style>
+
+<script>
+function isElementInViewport(el: Element) {
+  const rect = el.getBoundingClientRect();
+  const screenHeight = window.innerHeight || document.documentElement.clientHeight
+  return (rect.top - screenHeight <= -200) && rect.bottom >= 200;
+}
+
+function callbackFunc() {
+  const timelineItems = document.querySelectorAll(".timeline li");
+  timelineItems.forEach(item => {
+    if (isElementInViewport(item)) {
+      item.classList.add("in-view");
+    }
+  })
+}
+
+window.addEventListener("load", callbackFunc);
+window.addEventListener("scroll", callbackFunc);
+</script>

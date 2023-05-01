@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string,
+  id?: string,
+  backgroundColor?: string
+  color?: string
+}
+
+const { title, id, backgroundColor, color } = Astro.props
+---
+
+<section id={id} style={backgroundColor && `background-color: var(${backgroundColor})`} class="main-section">
+  <h2 style={ color && `color: var(${color}); border-color: var(${color})`}>
+    {title}
+  </h2>
+  <slot/>
+</section>
+
+<style lang="scss">
+  @import '../styles/global.scss';
+
+  section {
+    width: 100%;
+    position: relative;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 3rem 0;
+
+
+    h2 {
+      font-size: 3.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid black;
+      width: 50%;
+      margin: 1rem;
+    }
+
+    @media (max-width: $breakpoint-med) {
+      h2 {
+        width: 100%;
+      }
+    }
+  }
+</style>

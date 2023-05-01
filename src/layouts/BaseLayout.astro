@@ -1,0 +1,46 @@
+---
+// Learn about using Astro layouts:
+// https://docs.astro.build/en/core-concepts/layouts/
+
+// Component Imports
+import MainHead from '../components/MainHead.astro';
+import { Nav } from '../components/Nav.tsx';
+
+interface Props {
+	title?: string | undefined;
+	description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
+
+const nav = [
+	{
+		title: 'About Me',
+		id: 'about-me'
+	},
+	{
+		title: 'Experience',
+		id: 'experience'
+	},
+	{
+		title: 'Projects and Contributions',
+		id: 'projects-and-contributions'
+	},
+	{
+		title: 'Contact Me',
+		id: 'contact-me'
+	}
+]
+---
+
+<html lang="en">
+	<head>
+		<MainHead title={title} description={description} />
+	</head>
+	<body>
+		<Nav nav={nav} client:load/>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>

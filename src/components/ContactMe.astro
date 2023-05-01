@@ -1,0 +1,54 @@
+---
+import PimpedPill, { Props } from "./PimpedPill.astro";
+
+const contactMethods: Props[] = [
+  {
+    icon: 'github-logo',
+    label: 'GitHub',
+    href: 'https://github.com/OLingard/'
+  },
+  {
+    icon: 'linkedin-logo',
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/oscarlingard/'
+  },
+  {
+    icon: 'paper-plane-tilt',
+    label: 'Email',
+    href: 'mailto:oscarlingard@gmail.com'
+  }
+]
+---
+
+<div>
+{
+  contactMethods.map(method => {
+    return <PimpedPill
+      href={method.href}
+      icon={method.icon}
+      label={method.label}
+      tooltip={method.tooltip}
+    />
+  })
+}
+</div>
+
+<style lang="scss">
+  @import '../styles/global.scss';
+  div {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    margin: 5rem 0;
+  }
+
+  @media screen and (max-width: $breakpoint-med) {
+    div {
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+</style>
