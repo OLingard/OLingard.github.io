@@ -3,11 +3,25 @@ import Timeline, { TimelineBlob } from "./Timeline.astro";
 
 const experiences: TimelineBlob[] = [
   {
-    time: '2021 - Present',
+    time: '2023 - Present',
+    title: 'Software Engineer II | THG',
+    information: `
+    <ul style="padding-left: 10px;">
+      <li>I built a delivery platform specialising in allowing one-click deployments of highly performant e-commerce sites.
+        <ul>
+          <li>We reduced the deployment time for sites from 6 hours to 4 minutes.</li>
+          <li>Migrated multiple sites over to our new architecture, successfully managing DNS and TLS to enable a 0 down-time migration.</li>
+          <li>Led a team of 8 to move our architecture over to run on Fastly rust edge services.</li>
+        </ul>
+      </li>
+    </ul>
+    `
+  },
+  {
+    time: '2021 - 2023',
     title: 'Software Engineer | THG',
     information: `
     <ul style="padding-left: 10px;">
-      <li>I managed multiple graduate software engineers and interns.</li>
       <li>I worked on the project to radically overhaul the website <a href="https://www.coggles.com/">Coggles</a>.
         <ul>
           <li>We dropped TTFB by 70%.</li>
@@ -19,6 +33,7 @@ const experiences: TimelineBlob[] = [
       </li>
       <li>I worked with our new starters to onboard them and bring our team size up from 3 to 11.</li>
       <li>I planned weekly sprint items and led the sprint ceremonies.</li>
+    </ul>
     `
   },
   {
@@ -43,10 +58,12 @@ const experiences: TimelineBlob[] = [
     time: '2019 - 2020',
     title: 'Graduate Commercial Analyst | Booking.com',
     information: `
-    During my graduate rotations, I have been able to experience multiple branches of the business. Highlights include: <br>
-              •	Being actively sought out and asked to be one of the sole analysts in a high-profile marketing campaign. <br>
-              •	Leading the creation of new and innovative forecasting methods in light of the Covid pandemic.<br>
-              •	Presenting my analysis and recommendations to key stakeholders which are being used to further product development.
+    During my graduate rotations, I have been able to experience multiple branches of the business. Highlights include:
+    <ul style="padding-left: 10px;">
+      <li>Being actively sought out and asked to be one of the sole analysts in a high-profile marketing campaign.</li>
+      <li>Leading the creation of new and innovative forecasting methods in light of the Covid pandemic.</li>
+      <li>Presenting my analysis and recommendations to key stakeholders which are being used to further product development.</li>
+    </ul>
     `
   }
 ]
